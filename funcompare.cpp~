@@ -1,0 +1,66 @@
+#include<iostream>
+
+using namespace std;
+
+//Array is collection of similar datatypes*/
+void input(const float arr[],int SIZE){
+	
+        int num;
+	cout<<"How many numbers you wanna process?";
+	cin>>num;
+	const int SIZE=num;
+	int arr[num];
+	cout<<"Enter "<<SIZE<<" numbers: ";
+	for(int i=0;i<SIZE;i++){
+		cin>>arr[i];
+	}
+}
+
+int isLarge(int arr[],int SIZE)
+{
+	int temp;
+	int large1;
+	for(int i=0;i<SIZE;i++)
+	{
+		int large=arr[i];
+
+		for(int j=1;j<SIZE;j++)
+		{
+			if(large < arr[j])
+		        temp=arr[i];
+			arr[i]=arr[j];
+			arr[j]=temp;
+		}
+		large1=arr[i];
+	}
+}
+
+int isSmall(int arr[],int SIZE)
+{
+	int temp;
+	int small1;
+        for(int i=0;i<SIZE;i++)
+        {
+                int small=arr[i];
+
+                for(int j=1;j<SIZE;j++)
+                {
+                        if(small > arr[j])
+                        temp=arr[i];
+                        arr[i]=arr[j];
+                        arr[j]=temp;
+                }
+		small1=arr[i];
+        }
+	return small1;
+}
+
+
+int main(){
+int numbers[SIZE];
+input(numbers,SIZE);
+showValues(numbers);
+
+
+}
+
